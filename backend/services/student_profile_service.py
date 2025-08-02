@@ -1,10 +1,11 @@
 import os
+import json
 from typing import Optional, Protocol
 
 import anthropic
 from dotenv import load_dotenv
 
-from backend.constants.prompt_templates import STUDENT_PROFILER_PROMPT
+from constants.prompt_templates import STUDENT_PROFILER_PROMPT
 
 
 class LLMStudentProfiler(Protocol):
@@ -40,7 +41,9 @@ class AnthropicHaikuStudentProfiler(LLMStudentProfiler):
                     }
                 ],
             )
-            return message.content[0].text
+            json_string = message.content[0].text
+            return json.loads(json_string)
+
         except Exception as e:
             print(f"Error al generar el perfil con Anthropic: {e}")
             return None

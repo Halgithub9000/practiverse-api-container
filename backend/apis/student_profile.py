@@ -3,8 +3,8 @@ from pydantic import BaseModel
 from slowapi.extension import Limiter as SlowAPILimiter
 from slowapi.util import get_remote_address
 
-from backend.services.document_operations_service import GcsDocumentOperations
-from backend.services.student_profile_service import AnthropicHaikuStudentProfiler
+from services.document_operations_service import GcsDocumentOperations
+from services.student_profile_service import AnthropicHaikuStudentProfiler
 
 router = APIRouter()
 limiter = SlowAPILimiter(key_func=get_remote_address)

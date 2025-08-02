@@ -1,5 +1,5 @@
 run:
-	cd .. && uvicorn backend.main:app --reload
+	 uvicorn main:app --reload
 
 precommit:
 	isort . --settings-path pyproject.toml
