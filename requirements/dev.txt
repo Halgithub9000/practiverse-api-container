@@ -1,0 +1,10 @@
+black
+flake8
+flake8-pyproject
+pur
+isort
+pylint
+pygraphviz
+djlint
+pyparsing
+pydot

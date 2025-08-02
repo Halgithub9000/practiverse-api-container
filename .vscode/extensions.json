@@ -1,0 +1,28 @@
+{
+    "recommendations": [
+        // documentación
+        "bierner.markdown-mermaid",
+        "marp-team.marp-vscode",
+        // python
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "batisteo.vscode-django",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "seatonjiang.gitmoji-vscode",
+        "wk-j.vscode-httpie",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-toolsai.jupyter-renderers",
+        "ms-vscode.live-server",
+        "ms-vsliveshare.vsliveshare",
+        "ms-python.debugpy",
+        "ms-python.flake8",
+        "ms-python.pylint",
+        "ms-python.isort",
+        "ms-vscode.makefile-tools",
+        "monosans.djlint",
+    ]
+}

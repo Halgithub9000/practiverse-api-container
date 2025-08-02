@@ -1,0 +1,14 @@
+{
+    "blank_line_before_tag": "load,extends,block,endpartialdef",
+    "blank_line_after_tag": "block,partialdef,endpartialdef",
+    "extension": "html",
+    "max_line_length": "140",
+    "profile": "django",
+    "use_gitignore": true,
+    "preserve_inline-tags": "div, span, p",
+    "max-inline-length": "140",
+    "preserve-variable-spacing": "true",
+    "compact-inline-expressions": "true",
+    "skip_compact_conditions": true,
+    "space-variable-braces": true
+}

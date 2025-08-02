@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 140
+target-version = ['py313']
+
+[tool.isort]
+py_version = 313
+profile = 'black'
+line_length = 140
+
+[tool.flake8]
+max-line-length = 140
+exclude = ["__pycache__"]
+ignore = ["E501", "W503", "F405", "E203"]

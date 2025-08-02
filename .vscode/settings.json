@@ -1,0 +1,14 @@
+{
+    "files.encoding": "utf8",
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "markdown.marp.html": "all",
+    "black-formatter.args": [
+        "--config", "src/pyproject.toml"
+    ],
+    "isort.args": [
+        "--settings-path", "src/pyproject.toml"
+    ],
+    "djlint.configuration": "src/.djlintrc",
+    "flake8.cwd": "${workspaceFolder}/src",
+    "pylint.cwd": "${workspaceFolder}/src",
+}
