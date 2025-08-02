@@ -22,8 +22,8 @@ jobs:
 
     - name: Run Black
       run: |
-        black --check ./src --config ./src/pyproject.toml
+        black --check ./backend --config ./backend/pyproject.toml
 
     - name: Run Flake8
       run: |
-        flake8 ./src --config ./src/.flake8
+        flake8 ./backend --config ./backend/.flake8
