@@ -8,7 +8,9 @@
         "--env-file",
         "${localWorkspaceFolder}/.devcontainer/.env",
         "--env-file",
-        "${localWorkspaceFolder}/src/.env"
+        "${localWorkspaceFolder}/backend/.env",
+		"--env-file",
+        "${localWorkspaceFolder}/backend/.env"
     ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
