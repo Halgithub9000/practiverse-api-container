@@ -10,3 +10,4 @@ line_length = 140
 [tool.flake8]
 max-line-length = 140
 exclude = ["__pycache__"]
+ignore = ["E501", "E704"]

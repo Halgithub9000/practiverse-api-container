@@ -1,13 +1,14 @@
+import os
+from typing import Optional, Protocol
+
 import anthropic
 from dotenv import load_dotenv
-import os
-from typing import Protocol, Optional
+
 from backend.constants.prompt_templates import STUDENT_PROFILER_PROMPT
 
 
 class LLMStudentProfiler(Protocol):
-    def generate_student_profile(self, pdf: str) -> Optional[str]:
-        ...
+    def generate_student_profile(self, pdf: str) -> Optional[str]: ...
 
 
 class AnthropicHaikuStudentProfiler(LLMStudentProfiler):
@@ -19,8 +20,7 @@ class AnthropicHaikuStudentProfiler(LLMStudentProfiler):
 
     def generate_student_profile(self, pdf: str) -> Optional[str]:
         if not pdf:
-            print(
-                "Error: El texto del archivo está vacío. No se puede generar el perfil.")
+            print("Error: El texto del archivo está vacío. No se puede generar el perfil.")
             return None
 
         try:
@@ -38,7 +38,7 @@ class AnthropicHaikuStudentProfiler(LLMStudentProfiler):
                             }
                         ],
                     }
-                ]
+                ],
             )
             return message.content[0].text
         except Exception as e:

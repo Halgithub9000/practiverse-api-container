@@ -1,20 +1,18 @@
-from typing import Protocol
 import os
-from google.cloud import storage
-from dotenv import load_dotenv
+from typing import Protocol
+
 import fitz  # PyMuPDF
+from dotenv import load_dotenv
+from google.cloud import storage
 
 
 class DocumentOperationsService(Protocol):
 
-    def list_all_documents(self) -> list[str]:
-        ...
+    def list_all_documents(self) -> list[str]: ...
 
-    def download_file(self, blob_name: str) -> str:
-        ...
+    def download_file(self, blob_name: str) -> str: ...
 
-    def upload_file(self, file, destination_blob_name: str) -> None:
-        ...
+    def upload_file(self, file, destination_blob_name: str) -> None: ...
 
 
 class GcsDocumentOperations(DocumentOperationsService):
@@ -25,8 +23,7 @@ class GcsDocumentOperations(DocumentOperationsService):
 
     def list_all_documents(self) -> list[str]:
         if not self.bucket_name:
-            raise EnvironmentError(
-                "GCS_BUCKET_NAME no está configurado en las variables de entorno.")
+            raise EnvironmentError("GCS_BUCKET_NAME no está configurado en las variables de entorno.")
         try:
             bucket = self.client.bucket(self.bucket_name)
             blobs = bucket.list_blobs()
@@ -36,8 +33,7 @@ class GcsDocumentOperations(DocumentOperationsService):
 
     def download_file(self, blob_name: str) -> str:
         if not self.bucket_name:
-            raise EnvironmentError(
-                "No se encontró la variable de entorno GCS_BUCKET_NAME.")
+            raise EnvironmentError("No se encontró la variable de entorno GCS_BUCKET_NAME.")
 
         print(f"Nombre del bucket cargado desde .env: {self.bucket_name}")
 
@@ -64,8 +60,7 @@ class GcsDocumentOperations(DocumentOperationsService):
 
     def upload_file(self, file, destination_blob_name: str = "cv.pdf") -> None:
         if not self.bucket_name:
-            raise EnvironmentError(
-                "GCS_BUCKET_NAME no está configurado en las variables de entorno.")
+            raise EnvironmentError("GCS_BUCKET_NAME no está configurado en las variables de entorno.")
 
         try:
             bucket = self.client.bucket(self.bucket_name)
