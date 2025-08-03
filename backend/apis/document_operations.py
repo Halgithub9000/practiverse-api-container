@@ -3,7 +3,7 @@
 # from dotenv import load_dotenv
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
-from backend.services.document_operations_service import GcsDocumentOperations
+from services.document_operations_service import GcsDocumentOperations
 
 router = APIRouter()
 
